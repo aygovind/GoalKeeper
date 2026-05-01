@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-surface-2: #1a1a1a;
+  --color-border: #262626;
+  --color-text: #e5e7eb;
+  --color-muted: #9ca3af;
+  --color-green: #22c55e;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 128%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* remove number input spinners (hours +/-) */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* react-calendar-heatmap overrides */
+.react-calendar-heatmap text {
+  fill: var(--color-muted);
+  font-size: 8px;
+}
+
+.react-calendar-heatmap rect {
+  rx: 2px;
+  ry: 2px;
+}
+
+.react-calendar-heatmap .gk-empty {
+  fill: var(--color-surface-2);
+}
+
+.react-calendar-heatmap .gk-missed {
+  fill: #2a2a2a;
+}
+
+.react-calendar-heatmap .gk-goal {
+  fill: #15803d; /* green-700 */
+}
+
+.react-calendar-heatmap .gk-whole {
+  fill: var(--color-green);
+}
+
+/* (no longer used) old react-calendar-heatmap scaling removed */
+
+/* shrink custom monthly grid by ~50% */
+.gk-month-grid {
+  transform: scale(0.975);
+  transform-origin: top center;
+}
